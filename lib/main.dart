@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pets_caring_system/LoginScreen.dart';
+import 'package:pets_caring_system/RegisterScreen.dart';
 import 'package:pets_caring_system/SplashScreen.dart';
 
 void main() {
@@ -12,14 +14,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp (
+    return GetMaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
+      initialRoute: '/SplashScreen',
+      getPages: [
+        GetPage(name: '/SplashScreen', page: () => Splashscreen()),
+        GetPage(name: '/LoginScreen', page: () => LoginScreen()),
+        GetPage(name: '/RegisterScreen', page: () => RegisterScreen()),
 
-        primarySwatch: Colors.blue,
-      ),
-      home: Splashscreen(),
+      ],
+      // theme: ThemeData(
+      //   primarySwatch: Colors.blue,
+      // ),
+
     );
   }
 }
-
